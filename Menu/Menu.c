@@ -8,6 +8,6 @@
 
 void MenuInicial (){
 
-
+printf("Este e para o bingo ");
 
 }
