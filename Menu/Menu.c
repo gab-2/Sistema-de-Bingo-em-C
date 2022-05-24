@@ -11,6 +11,7 @@ void Pessoa()
         char nome[30];
         int numero;
         int DocumetoPessoal;
+        
     };
 
 }
