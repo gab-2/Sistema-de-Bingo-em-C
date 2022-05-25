@@ -15,17 +15,27 @@ void Pessoa()
 
     struct DadosParticipante Dados;
 
-    printf("Cadatrar novo Participante");
-    printf("Digite o nome do Participante: ");
-    printf("%c", &Dados.nome);
-    printf("Digite o numero do Participante: ");
+    printf("\n Cadatrar novo Participante \n");
+    printf("\n Digite o nome do Participante: \n");
+    scanf("%c", &Dados.nome);
+    printf("\n Digite o numero do Participante: \n");
     scanf("%d", &Dados.numero);
-    printf("Digite o numero do Documento Pessoal do Perticipante: ");
+    printf("\n Digite o numero do Documento Pessoal do Perticipante: \n");
     scanf("%d", &Dados.DocumetoPessoal);
 }
 
 void Premios()
-{
+{   
+    struct CadastroDePremios
+    {
+    char nomeDoPremio[30];
+    int ValorDoPremio;
+    };
+    struct CadastroDePremios Premios;
+    printf("\n Informe o premio para cadastro \n");
+    scanf("%c", &Premios.nomeDoPremio);
+    printf("\n Informe o valor do premio \n");
+    scanf("%d", &Premios.ValorDoPremio);
 }
 
 void RegistrarCartela()
@@ -47,14 +57,19 @@ void main()
     printf("Selecione a opcao desejada: ");
     scanf("%d", &opcao);
 
-    while (opcao = !6)
+    while (opcao != 6)
     {
 
-        if (opcao = 1)
+        if (opcao == 1)
         {
 
             Pessoa();
 
+        }
+
+        if (opcao == 2)
+        {
+            Premios();
         }
     }
 }
