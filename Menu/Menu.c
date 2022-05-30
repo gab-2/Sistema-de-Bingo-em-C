@@ -4,7 +4,7 @@
 #include <string.h>
 #include <math.h>
 
-// Função e struc para coletar os dados do participante
+// Função e struct para coletar os dados do participante
 void Pessoa()
 {
 
@@ -26,12 +26,35 @@ void Pessoa()
 
     for (int i = 0; i < Qtd_participantes; i++)
     {
-        printf("\n Digite o nome do Participante: ");
-        scanf("%s", &Dados.nome);
-        printf("\n Digite o numero do Participante: ");
-        scanf("%d", &Dados.numero);
-        printf("\n Digite o numero do Documento Pessoal do Perticipante: ");
-        scanf("%d", &Dados.DocumetoPessoal);
+
+        FILE *cadastro_participante;
+        char participante[Qtd_participantes];
+
+        // Função que cria uma nova string usando uma variavel, usada para o nome do arquivo que vai ser criado
+        sprintf(participante, "participante-%s.txt", i);
+        cadastro_participante = fopen(participante, "w");
+
+        if (cadastro_participante != NULL)
+        {
+
+            printf("\n Digite o nome do Participante: ");
+            scanf("%s", &Dados.nome);
+            fprintf(cadastro_participante,"%s\n", Dados.nome);
+
+            printf("\n Digite o numero do Participante: ");
+            scanf("%d", &Dados.numero);
+            fprintf(cadastro_participante,"%d\n", Dados.numero);
+
+            printf("\n Digite o numero do Documento Pessoal do Perticipante: ");
+            scanf("%d", &Dados.DocumetoPessoal);
+            fprintf(cadastro_participante,"%d\n", Dados.DocumetoPessoal);
+
+            fclose(cadastro_participante);
+        }
+        else
+        {
+            printf("ERRO!, O arquivo nao pode ser aberto ou criado!");
+        }
     }
 }
 
