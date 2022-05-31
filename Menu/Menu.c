@@ -3,6 +3,7 @@
 #include <locale.h>
 #include <string.h>
 #include <math.h>
+#include <time.h>
 
 // Função e struct para coletar os dados do participante
 void Pessoa()
@@ -176,13 +177,34 @@ void Premios()
 
 void IntervaloNumeros()
 {
+    int i, TamanhoDoIntervalo;
+    int inicioIntervaloDosNumeros, FinalIntervaloDosNumeros;
+    int *resultadoDoIntervalo;
 
-    int intervalo_numeros;
+    printf("Digite o tamanho do interv \n");
 
-    printf("\n Digite o intervalo de numeros a serem sorteados!");
-    printf("\n EX: (1 a 50)");
-    printf("Intervalo: ");
-    scanf("%d", intervalo_numeros);
+    scanf("%d", &TamanhoDoIntervalo);
+    resultadoDoIntervalo = malloc(TamanhoDoIntervalo * sizeof(int));
+
+    printf("Digite o numero do inicio do intervalo : ");
+    scanf("%d", &inicioIntervaloDosNumeros);
+
+    printf("Digite o numero do final do intervalo : ");
+    scanf("%d", &FinalIntervaloDosNumeros);
+
+    srand(time(NULL));
+
+    for (i = 0; i < TamanhoDoIntervalo; i++)
+    {
+        resultadoDoIntervalo[i] = inicioIntervaloDosNumeros + rand() % FinalIntervaloDosNumeros;
+    }
+    printf("\n\n");
+    for (i = 0; i < TamanhoDoIntervalo; i++)
+    {
+        printf("Numeros: %d ", resultadoDoIntervalo[i]);
+        printf("\n\n");
+    }
+    free(resultadoDoIntervalo);
 }
 
 void NumerosPorParticipante()
@@ -225,6 +247,7 @@ void main()
 
         else if (opcao == 3)
         {
+            IntervaloNumeros();
         }
 
         else if (opcao == 4)
