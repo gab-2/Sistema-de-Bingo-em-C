@@ -14,7 +14,7 @@
 void main()
 {
 
-    char opcao[30];
+    int opcao;
 
     do
     {
@@ -28,36 +28,7 @@ void main()
         printf("\n 6 - Iniciar o Bingo!");
         printf("\n ---------------------------------");
         printf("\n Selecione a opcao desejada: ");
-        scanf("%s", &opcao);
-
-        opcao[tam(opcao) - 1] = 0;
-        while (!isdigit(opcao[0]) || tam(opcao) > 1) {
-            printf("Entre com um digito entre 0 e 2\n");
-        }
-
-        if (opcao == 1)
-        {
-
-            Participante();
-        }
-
-        else if (opcao == 2)
-        {
-            Premios();
-        }
-
-        else if (opcao == 3)
-        {
-            IntervaloNumeros();
-        }
-
-        else if (opcao == 4)
-        {
-        }
-
-        else if (opcao == 5)
-        {
-        }
+        scanf("%d", &opcao);
 
         while (opcao < 1 || opcao > 6)
         {
@@ -65,5 +36,37 @@ void main()
             printf("\n Selecione a opcao desejada: ");
             scanf("%d", &opcao);
         }
+
+        if (opcao == 1)
+        {
+            system("cls");
+            Participante();
+            
+        }
+
+        else if (opcao == 2)
+        {
+            system("cls");
+            Premios();
+        }
+
+        else if (opcao == 3)
+        {
+            system("cls");
+            IntervaloNumeros();
+        }
+
+        else if (opcao == 4)
+        {
+            system("cls");
+            NumerosPorParticipante();
+        }
+
+        else if (opcao == 5)
+        {
+            system("cls");
+            RegistrarCartela();
+        }
+
     } while (opcao != 6);
 }

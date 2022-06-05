@@ -18,7 +18,7 @@ void Participante()
 
     struct DadosParticipante Dados;
 
-    int Qtd_participantes;
+    int Qtd_participantes, j = 0;
 
     printf("\n Digite a quantidade de participantes que serao cadastrados: ");
     scanf("%d", &Qtd_participantes);
@@ -26,10 +26,11 @@ void Participante()
     FILE *cadastro_participante;
     char participante[Qtd_participantes];
 
-    printf("\n Cadatrar novo Participante!");
+    printf("\n Cadatrar novo Participante! \n");
 
     for (int i = 0; i < Qtd_participantes; i++)
     {
+        j++;
 
         // Função que cria uma nova string usando uma variavel, usada para o nome do arquivo que vai ser criado
         sprintf(participante, "participante-%d.txt", i);
@@ -38,15 +39,15 @@ void Participante()
         if (cadastro_participante != NULL)
         {
 
-            printf("\n Digite o nome do Participante: ");
+            printf("\n Digite o nome do Participante %d: ", j);
             scanf("%s", &Dados.nome);
             fprintf(cadastro_participante, "%s\n", Dados.nome);
 
-            printf("\n Digite o numero do Participante: ");
+            printf("\n Digite o numero do Participante %d: ", j);
             scanf("%d", &Dados.numero);
             fprintf(cadastro_participante, "%d\n", Dados.numero);
 
-            printf("\n Digite o numero do Documento Pessoal do Perticipante: ");
+            printf("\n Digite o numero do Documento Pessoal do Perticipante %d: ", j);
             scanf("%d", &Dados.DocumetoPessoal);
             fprintf(cadastro_participante, "%d\n", Dados.DocumetoPessoal);
 
@@ -56,5 +57,8 @@ void Participante()
         {
             printf("ERRO!, O arquivo nao pode ser aberto ou criado!");
         }
+
+        system("cls");
+        
     }
 }
