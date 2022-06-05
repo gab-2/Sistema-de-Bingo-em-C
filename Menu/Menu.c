@@ -41,7 +41,6 @@ void main()
         {
             system("cls");
             Participante();
-            
         }
 
         else if (opcao == 2)
