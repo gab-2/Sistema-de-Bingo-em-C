@@ -5,6 +5,7 @@
 #include <math.h>
 #include <time.h>
 
+FILE *cadastro_participante;
 int global_Qtd_participantes;
 
 // Função e struct para coletar os dados do participante
@@ -25,17 +26,19 @@ void Participante()
     printf("\n Digite a quantidade de participantes que serao cadastrados: ");
     scanf("%d", &global_Qtd_participantes);
 
-    FILE *cadastro_participante;
+    
     char participante[global_Qtd_participantes];
 
     printf("\n Cadatrar novo Participante! \n");
+
+    //int i = 1;
 
     for (int i = 0; i < global_Qtd_participantes; i++)
     {
         j++;
 
         // Função que cria uma nova string usando uma variavel, usada para o nome do arquivo que vai ser criado
-        sprintf(participante, "participante-%d.txt", i);
+        sprintf(participante, "participante-%d.txt", j);
         cadastro_participante = fopen(participante, "w");
 
         if (cadastro_participante != NULL)

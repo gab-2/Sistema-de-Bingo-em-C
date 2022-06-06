@@ -19,6 +19,7 @@ void main()
     do
     {
 
+        printf("\n Seja Bem Vindo Ao BingoSena!");
         printf("\n ---------------Menu--------------");
         printf("\n 1 - Cadastrar participante");
         printf("\n 2 - Cadastrar Premios");

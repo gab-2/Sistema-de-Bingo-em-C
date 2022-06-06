@@ -5,41 +5,40 @@
 #include <math.h>
 #include <time.h>
 
-int *global_resultadoDoIntervalo;
+int *global_resultadoDoIntervalo, global_TamanhoDoIntervalo = 5, global_inicioIntervaloDosNumeros = 1, global_FinalIntervaloDosNumeros = 20;
 
 void IntervaloNumeros()
 {
-    int i = 0, igual, TamanhoDoIntervalo;
+    int i = 0, igual;
     int j, aux;
-    int inicioIntervaloDosNumeros, FinalIntervaloDosNumeros;
 
     printf("\n Digite a quantidade de numeros que podera ser selecionada por cada participante: ");
-    scanf("%d", &TamanhoDoIntervalo);
+    scanf("%d", &global_TamanhoDoIntervalo);
 
-    global_resultadoDoIntervalo = malloc(TamanhoDoIntervalo * sizeof(int));
+    global_resultadoDoIntervalo = malloc(global_TamanhoDoIntervalo * sizeof(int));
 
     printf("\n Digite o numero do inicio do intervalo dos numeros sorteados: ");
-    scanf("%d", &inicioIntervaloDosNumeros);
+    scanf("%d", &global_inicioIntervaloDosNumeros);
 
     printf("\n Digite o numero do final do intervalo dos numeros sorteados: ");
-    scanf("%d", &FinalIntervaloDosNumeros);
+    scanf("%d", &global_FinalIntervaloDosNumeros);
     srand(time(NULL));
 
-    while (FinalIntervaloDosNumeros < inicioIntervaloDosNumeros)
+    while (global_FinalIntervaloDosNumeros < global_inicioIntervaloDosNumeros)
     {
         printf("\n O intervalo Final dos numeros nao pode ser menor do que o Inicio do intervalo!");
         printf("\n Tente novamente!");
 
         printf("\n Digite o numero do inicio do intervalo : ");
-        scanf("%d", &inicioIntervaloDosNumeros);
+        scanf("%d", &global_inicioIntervaloDosNumeros);
 
         printf("\n Digite o numero do final do intervalo : ");
-        scanf("%d", &FinalIntervaloDosNumeros);
+        scanf("%d", &global_FinalIntervaloDosNumeros);
     }
 
     do
     {
-        global_resultadoDoIntervalo[i] = inicioIntervaloDosNumeros + rand() % (FinalIntervaloDosNumeros - inicioIntervaloDosNumeros); // sorteia um número
+        global_resultadoDoIntervalo[i] = global_inicioIntervaloDosNumeros + rand() % (global_FinalIntervaloDosNumeros - global_inicioIntervaloDosNumeros); // sorteia um número
         igual = 0;
         for (j = 0; j < i; j++)
         { // percorre a parte do vetor já preenchida
@@ -49,10 +48,13 @@ void IntervaloNumeros()
 
         if (igual == 0) // significa que o elemento não se repetiu
             i++;
-    } while (i < TamanhoDoIntervalo); // enquanto não for sorteado quantidade de números diferentes
+    } while (i < global_TamanhoDoIntervalo); // enquanto não for sorteado quantidade de números diferentes
 
-    for (i = 0; i < TamanhoDoIntervalo; i++)
+    for (i = 0; i < global_TamanhoDoIntervalo; i++)
     {
         printf("%d ", global_resultadoDoIntervalo[i]);
     }
+
+system("cls");
+
 }
