@@ -8,6 +8,7 @@
 void IntervaloNumeros()
 {
     int i, TamanhoDoIntervalo;
+    int j, aux;
     int inicioIntervaloDosNumeros, FinalIntervaloDosNumeros;
     int *resultadoDoIntervalo;
 
@@ -24,15 +25,22 @@ void IntervaloNumeros()
 
     srand(time(NULL));
 
-    for (i = 0; i < TamanhoDoIntervalo; i++)
-    {
-        resultadoDoIntervalo[i] = inicioIntervaloDosNumeros + rand() % FinalIntervaloDosNumeros;
+    for(int i = 0; i<TamanhoDoIntervalo; i++){
+      resultadoDoIntervalo[i] =  inicioIntervaloDosNumeros + rand() % (FinalIntervaloDosNumeros - inicioIntervaloDosNumeros);
+}
+
+    for(i = 0; i < TamanhoDoIntervalo; i++){
+       aux = 0;
+          for(j = i - 1; j >= 0; j--){
+               if(resultadoDoIntervalo[i] == resultadoDoIntervalo[j]){
+                   aux = 1;
+        }
     }
-    printf("\n\n");
-    for (i = 0; i < TamanhoDoIntervalo; i++)
-    {
-        printf("Numeros: %d ", resultadoDoIntervalo[i]);
-        printf("\n\n");
-    }
+
+    if(aux == 0){
+         printf("%d \n",resultadoDoIntervalo[i]);
+}
+}
     free(resultadoDoIntervalo);
+    
 }
