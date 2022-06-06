@@ -8,18 +8,18 @@
 FILE *cadastro_participante;
 int global_Qtd_participantes;
 
-// Função e struct para coletar os dados do participante
-void Participante()
-{
-
-    struct DadosParticipante
+struct DadosParticipante
     {
         char nome[30];
         int numero;
         int DocumetoPessoal;
     };
 
-    struct DadosParticipante Dados;
+struct DadosParticipante Dados;
+
+// Função e struct para coletar os dados do participante
+void Participante()
+{
 
     int j = 0;
 

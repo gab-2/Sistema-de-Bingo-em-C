@@ -5,6 +5,8 @@
 #include <math.h>
 #include <time.h>
 
+int global_Codigo_Participante;
+
 void RegistrarCartela()
 {
 
@@ -13,14 +15,14 @@ void RegistrarCartela()
     do
     {
 
-        int Codigo_Participante, Numeros_Participante = 0;
+        int Numeros_Participante = 0;
 
         printf("\n Digite o numero do participante para registrar a cartela: ");
-        scanf("%d", &Codigo_Participante);
+        scanf("%d", &global_Codigo_Participante);
 
-        char participante[100];
+        char participante[global_Qtd_participantes];
 
-        sprintf(participante, "participante-%d.txt", Codigo_Participante);
+        sprintf(participante, "participante-%d.txt", global_Codigo_Participante);
         cadastro_participante = fopen(participante, "a");
 
         if (cadastro_participante != NULL)
@@ -28,14 +30,14 @@ void RegistrarCartela()
 
             printf("\n Quantidade de numeros que podem ser selecionados: %d", global_TamanhoDoIntervalo);
 
-            printf("\n Digite os numeros do participante: %d", Codigo_Participante);
+            printf("\n Digite os numeros do participante: %d", global_Codigo_Participante);
 
             for (int i = 0; i < global_TamanhoDoIntervalo; i++)
             {
 
-                printf("\n Digite o numero %d do participante: ", i);
+                printf("\n Digite o numero %d do participante: ", i + 1);
                 scanf("%d", &Numeros_Participante);
-                fprintf(cadastro_participante, "| %d |", Numeros_Participante);
+                fprintf(cadastro_participante, " %d ", Numeros_Participante);
 
                 while (Numeros_Participante < global_inicioIntervaloDosNumeros || Numeros_Participante > global_FinalIntervaloDosNumeros)
                 {
@@ -43,7 +45,7 @@ void RegistrarCartela()
                     printf("\n Tente novamente!");
                     printf("\n Digite o numero %d do participante: ", i);
                     scanf("%d", &Numeros_Participante);
-                    fprintf(cadastro_participante, "| %d |", Numeros_Participante);
+                    fprintf(cadastro_participante, " %d ", Numeros_Participante);
                 }
             }
         }
@@ -54,8 +56,10 @@ void RegistrarCartela()
 
         fclose(cadastro_participante);
 
-        printf("\n Deseja cadastrar um novo participante?");
-        printf("\n Digite 1 para sim || 2 para nao");
+        printf("\n Deseja cadastrar uma nova cartela de um participante?");
+        printf("\n Digite 1 para sim || 2 para nao: ");
         scanf("%d", &opcao);
     } while (opcao != 2);
+
+    system("cls");
 }

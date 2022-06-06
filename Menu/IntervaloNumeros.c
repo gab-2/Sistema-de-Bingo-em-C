@@ -50,11 +50,6 @@ void IntervaloNumeros()
             i++;
     } while (i < global_TamanhoDoIntervalo); // enquanto não for sorteado quantidade de números diferentes
 
-    for (i = 0; i < global_TamanhoDoIntervalo; i++)
-    {
-        printf("%d ", global_resultadoDoIntervalo[i]);
-    }
-
-system("cls");
+    system("cls");
 
 }
