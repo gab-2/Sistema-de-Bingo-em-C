@@ -7,14 +7,14 @@
 
 void IntervaloNumeros()
 {
-    int i, TamanhoDoIntervalo;
+    int i = 0, igual, TamanhoDoIntervalo;
     int j, aux;
     int inicioIntervaloDosNumeros, FinalIntervaloDosNumeros;
     int *resultadoDoIntervalo;
 
-    printf("Digite o tamanho do intervalo \n");
-
+    printf("Digite o tamanho do intervalo: ");
     scanf("%d", &TamanhoDoIntervalo);
+
     resultadoDoIntervalo = malloc(TamanhoDoIntervalo * sizeof(int));
 
     printf("Digite o numero do inicio do intervalo : ");
@@ -22,25 +22,24 @@ void IntervaloNumeros()
 
     printf("Digite o numero do final do intervalo : ");
     scanf("%d", &FinalIntervaloDosNumeros);
-
     srand(time(NULL));
 
-    for(int i = 0; i<TamanhoDoIntervalo; i++){
-      resultadoDoIntervalo[i] =  inicioIntervaloDosNumeros + rand() % (FinalIntervaloDosNumeros - inicioIntervaloDosNumeros);
-}
-
-    for(i = 0; i < TamanhoDoIntervalo; i++){
-       aux = 0;
-          for(j = i - 1; j >= 0; j--){
-               if(resultadoDoIntervalo[i] == resultadoDoIntervalo[j]){
-                   aux = 1;
+    do
+    {
+        resultadoDoIntervalo[i] = inicioIntervaloDosNumeros + rand() % (FinalIntervaloDosNumeros - inicioIntervaloDosNumeros); // sorteia um número
+        igual = 0;
+        for (j = 0; j < i; j++)
+        { // percorre a parte do vetor já preenchida
+            if (resultadoDoIntervalo[j] == resultadoDoIntervalo[i])
+                igual = 1; // número repetido
         }
-    }
 
-    if(aux == 0){
-         printf("%d \n",resultadoDoIntervalo[i]);
-}
-}
-    free(resultadoDoIntervalo);
-    
+        if (igual == 0) // significa que o elemento não se repetiu
+            i++;
+    } while (i < TamanhoDoIntervalo); // enquanto não for sorteado quantidade de números diferentes
+
+    for (i = 0; i < TamanhoDoIntervalo; i++)
+    {
+        printf("%d ", resultadoDoIntervalo[i]);
+    }
 }

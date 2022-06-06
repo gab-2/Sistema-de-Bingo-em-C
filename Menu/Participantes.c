@@ -5,6 +5,8 @@
 #include <math.h>
 #include <time.h>
 
+int global_Qtd_participantes;
+
 // Função e struct para coletar os dados do participante
 void Participante()
 {
@@ -18,17 +20,17 @@ void Participante()
 
     struct DadosParticipante Dados;
 
-    int Qtd_participantes, j = 0;
+    int j = 0;
 
     printf("\n Digite a quantidade de participantes que serao cadastrados: ");
-    scanf("%d", &Qtd_participantes);
+    scanf("%d", &global_Qtd_participantes);
 
     FILE *cadastro_participante;
-    char participante[Qtd_participantes];
+    char participante[global_Qtd_participantes];
 
     printf("\n Cadatrar novo Participante! \n");
 
-    for (int i = 0; i < Qtd_participantes; i++)
+    for (int i = 0; i < global_Qtd_participantes; i++)
     {
         j++;
 
@@ -59,6 +61,6 @@ void Participante()
         }
 
         system("cls");
-        
+
     }
 }

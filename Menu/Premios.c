@@ -22,7 +22,7 @@ void Premios()
     printf("\n Opcao: ");
     scanf("%d", &opcao_qtd_premios);
 
-    if (opcao_qtd_premios = 1)
+    if (opcao_qtd_premios == 1)
     {
 
         while (opcao_qtd_premios != 1)
@@ -69,7 +69,7 @@ void Premios()
         }
     }
 
-    else if (opcao_qtd_premios = 2)
+    else if (opcao_qtd_premios == 2)
     {
 
         while (opcao_qtd_premios != 2)
@@ -79,43 +79,47 @@ void Premios()
             scanf("%d", &opcao_qtd_premios);
         }
 
-        int Qtd_participantes, Qtd_premios;
+        int Qtd_premios; // Qtd_participantes
 
         printf("\n Digite a quantidade de premios que serao cadastrados: ");
         scanf("%d", &Qtd_premios);
 
-        while (Qtd_premios > Qtd_participantes)
+        while (Qtd_premios > global_Qtd_participantes)
+        {
+            printf("\n A quantidade de premios nao pode ser maior do que a quantidade de jogadores!");
+            printf("\n Tente novamente!");
+            printf("\n Digite a quantidade de premios que serao cadastrados: ");
+            scanf("%d", &Qtd_premios);
+        }
+
+        FILE *cadastro_premios;
+        char premio[Qtd_premios];
+
+        printf("\n Cadatrar novo Premio!");
+
+        for (int i = 0; i < Qtd_premios; i++)
         {
 
-            FILE *cadastro_premios;
-            char premio[Qtd_premios];
+            // Função que cria uma nova string usando uma variavel, usada para o nome do arquivo que vai ser criado
+            sprintf(premio, "premio-%d.txt", i);
+            cadastro_premios = fopen(premio, "w");
 
-            printf("\n Cadatrar novo Premio!");
-
-            for (int i = 0; i < Qtd_premios; i++)
+            if (cadastro_premios != NULL)
             {
 
-                // Função que cria uma nova string usando uma variavel, usada para o nome do arquivo que vai ser criado
-                sprintf(premio, "premio-%d.txt", i);
-                cadastro_premios = fopen(premio, "w");
+                printf("\n Informe o nome premio para cadastro: ");
+                scanf("%s", &Premios.nomeDoPremio);
+                fprintf(cadastro_premios, "%s\n", Premios.nomeDoPremio);
 
-                if (cadastro_premios != NULL)
-                {
+                printf("\n Informe o valor do premio: ");
+                scanf("%d", &Premios.ValorDoPremio);
+                fprintf(cadastro_premios, "%d\n", Premios.ValorDoPremio);
 
-                    printf("\n Informe o nome premio para cadastro ");
-                    scanf("%s", &Premios.nomeDoPremio);
-                    fprintf(cadastro_premios, "%s\n", Premios.nomeDoPremio);
-
-                    printf("\n Informe o valor do premio ");
-                    scanf("%d", &Premios.ValorDoPremio);
-                    fprintf(cadastro_premios, "%d\n", Premios.ValorDoPremio);
-
-                    fclose(cadastro_premios);
-                }
-                else
-                {
-                    printf("ERRO!, O arquivo nao pode ser aberto ou criado!");
-                }
+                fclose(cadastro_premios);
+            }
+            else
+            {
+                printf("ERRO!, O arquivo nao pode ser aberto ou criado!");
             }
         }
     }
