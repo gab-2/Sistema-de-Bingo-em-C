@@ -7,8 +7,8 @@
 #include "Participantes.c"
 #include "Premios.c"
 #include "IntervaloNumeros.c"
-#include "NumerosPorParticipante.c"
 #include "RegistrarCartela.c"
+#include "IniciarBingo.c"
 #include <ctype.h>
 
 void main()
@@ -19,18 +19,17 @@ void main()
     do
     {
 
-        printf("\n Seja Bem Vindo Ao BingoSena!");
-        printf("\n ---------------Menu--------------");
+        printf("\n ---------------Menu-------------------------------------------------");
         printf("\n 1 - Cadastrar participante");
         printf("\n 2 - Cadastrar Premios");
         printf("\n 3 - Quantidade de numeros por participante e o intervalo do sorteio");
         printf("\n 4 - Registrar cartela");
         printf("\n 5 - Iniciar o Bingo!");
-        printf("\n ---------------------------------");
+        printf("\n --------------------------------------------------------------------");
         printf("\n Selecione a opcao desejada: ");
         scanf("%d", &opcao);
 
-        while (opcao < 1 || opcao > 6)
+        while (opcao < 1 || opcao > 5)
         {
             printf("\n Opcao digitada invalida tente novamente!");
             printf("\n Selecione a opcao desejada: ");
@@ -62,4 +61,10 @@ void main()
         }
 
     } while (opcao != 5);
+
+    if (opcao == 5)
+    {
+        system("cls");
+        IniciarBingo();
+    }
 }

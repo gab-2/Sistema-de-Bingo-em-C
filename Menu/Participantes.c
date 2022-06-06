@@ -31,8 +31,6 @@ void Participante()
 
     printf("\n Cadatrar novo Participante! \n");
 
-    //int i = 1;
-
     for (int i = 0; i < global_Qtd_participantes; i++)
     {
         j++;
