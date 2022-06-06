@@ -45,11 +45,11 @@ void Participante()
             scanf("%s", &Dados.nome);
             fprintf(cadastro_participante, "%s\n", Dados.nome);
 
-            printf("\n Digite o numero do Participante %d: ", j);
+            printf("\n Digite o numero de telefone do Participante %d: ", j);
             scanf("%d", &Dados.numero);
             fprintf(cadastro_participante, "%d\n", Dados.numero);
 
-            printf("\n Digite o numero do Documento Pessoal do Perticipante %d: ", j);
+            printf("\n Digite o numero do Documento Pessoal do Perticipante ex:(CPF) %d: ", j);
             scanf("%d", &Dados.DocumetoPessoal);
             fprintf(cadastro_participante, "%d\n", Dados.DocumetoPessoal);
 

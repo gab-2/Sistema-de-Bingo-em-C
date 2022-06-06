@@ -22,10 +22,9 @@ void main()
         printf("\n ---------------Menu--------------");
         printf("\n 1 - Cadastrar participante");
         printf("\n 2 - Cadastrar Premios");
-        printf("\n 3 - Selecionar o intervalo dos numeros");
-        printf("\n 4 - Quantidade de numeros por participante");
-        printf("\n 5 - Registrar cartela");
-        printf("\n 6 - Iniciar o Bingo!");
+        printf("\n 3 - Quantidade de numeros por participante e o intervalo do sorteio");
+        printf("\n 4 - Registrar cartela");
+        printf("\n 5 - Iniciar o Bingo!");
         printf("\n ---------------------------------");
         printf("\n Selecione a opcao desejada: ");
         scanf("%d", &opcao);
@@ -58,14 +57,8 @@ void main()
         else if (opcao == 4)
         {
             system("cls");
-            NumerosPorParticipante();
-        }
-
-        else if (opcao == 5)
-        {
-            system("cls");
             RegistrarCartela();
         }
 
-    } while (opcao != 6);
+    } while (opcao != 5);
 }
