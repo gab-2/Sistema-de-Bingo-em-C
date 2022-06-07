@@ -7,6 +7,7 @@
 void IniciarBingo()
 {
 
+
     printf("\n Numeros que foram sorteados dentro do intervalo! \n");
 
     for (int i = 0; i < global_TamanhoDoIntervalo; i++)
