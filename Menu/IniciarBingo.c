@@ -9,10 +9,10 @@ void IniciarBingo()
 
     printf("\n Numeros que foram sorteados dentro do intervalo! \n");
 
- //   for (int i = 0; i < global_TamanhoDoIntervalo; i++)
-   // {
-     //   printf(" %d ", global_resultadoDoIntervalo[i]);
-  // }
+    for (int i = 0; i < global_TamanhoDoIntervalo; i++)
+    {
+        printf(" %d ", global_resultadoDoIntervalo[i]);
+    }
 
     char participante[global_Qtd_participantes];
 

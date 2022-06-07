@@ -5,20 +5,19 @@
 #include <math.h>
 #include <time.h>
 
-int *global_resultadoDoIntervalo, global_TamanhoDoIntervalo, global_inicioIntervaloDosNumeros, global_FinalIntervaloDosNumeros;
+int global_resultadoDoIntervalo[100], global_TamanhoDoIntervalo, global_inicioIntervaloDosNumeros, global_FinalIntervaloDosNumeros;
 
 void IntervaloNumeros()
 {
     int i = 0, igual;
     int j;
-int global_resultadoDoIntervalo[100];
+    
 
     printf("\n Digite o numero do inicio do intervalo dos numeros sorteados: ");
     scanf("%d", &global_inicioIntervaloDosNumeros);
 
     printf("\n Digite o numero do final do intervalo dos numeros sorteados: ");
     scanf("%d", &global_FinalIntervaloDosNumeros);
-   
 
     while (global_FinalIntervaloDosNumeros < global_inicioIntervaloDosNumeros)
     {
@@ -32,29 +31,24 @@ int global_resultadoDoIntervalo[100];
         scanf("%d", &global_FinalIntervaloDosNumeros);
     }
 
-         global_TamanhoDoIntervalo = global_FinalIntervaloDosNumeros;
-            srand(time(NULL));
+    global_TamanhoDoIntervalo = global_FinalIntervaloDosNumeros;
+    srand(time(NULL));
 
     do
     {
 
-        global_resultadoDoIntervalo[i] = global_inicioIntervaloDosNumeros + rand () % global_FinalIntervaloDosNumeros; // sorteia um número
+        global_resultadoDoIntervalo[i] = global_inicioIntervaloDosNumeros + rand() % global_FinalIntervaloDosNumeros; // sorteia um número
         igual = 0;
         for (j = 0; j < i; j++)
         { // percorre a parte do vetor já preenchida
-            
+
             if (global_resultadoDoIntervalo[j] == global_resultadoDoIntervalo[i])
                 igual = 1; // número repetido
         }
 
         if (igual == 0) // significa que o elemento não se repetiu
-            i++;     
+            i++;
     } while (i < global_TamanhoDoIntervalo); // enquanto não for sorteado quantidade de números diferentes
-     for (int i = 0; i < global_TamanhoDoIntervalo; i++)
-    {
-        printf(" %d ",global_resultadoDoIntervalo[i]);
-   }
 
- //system("cls");
-
+    system("cls");
 }
