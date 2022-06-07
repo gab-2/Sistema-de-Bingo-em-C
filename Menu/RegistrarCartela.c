@@ -5,7 +5,7 @@
 #include <math.h>
 #include <time.h>
 
-int global_Codigo_Participante;
+int global_Codigo_Participante, global_Numeros_Participante = 0;
 
 void RegistrarCartela()
 {
@@ -14,8 +14,6 @@ void RegistrarCartela()
 
     do
     {
-
-        int Numeros_Participante = 0;
 
         printf("\n Digite o numero do participante para registrar a cartela: ");
         scanf("%d", &global_Codigo_Participante);
@@ -36,16 +34,16 @@ void RegistrarCartela()
             {
 
                 printf("\n Digite o numero %d do participante: ", i + 1);
-                scanf("%d", &Numeros_Participante);
-                fprintf(cadastro_participante, " %d ", Numeros_Participante);
+                scanf("%d", &global_Numeros_Participante);
+                fprintf(cadastro_participante, " %d ", global_Numeros_Participante);
 
-                while (Numeros_Participante < global_inicioIntervaloDosNumeros || Numeros_Participante > global_FinalIntervaloDosNumeros)
+                while (global_Numeros_Participante < global_inicioIntervaloDosNumeros || global_Numeros_Participante > global_FinalIntervaloDosNumeros)
                 {
                     printf("\n O numero deve estar entre o intervalo de: %d a %d", global_inicioIntervaloDosNumeros, global_FinalIntervaloDosNumeros);
                     printf("\n Tente novamente!");
                     printf("\n Digite o numero %d do participante: ", i);
-                    scanf("%d", &Numeros_Participante);
-                    fprintf(cadastro_participante, " %d ", Numeros_Participante);
+                    scanf("%d", &global_Numeros_Participante);
+                    fprintf(cadastro_participante, " %d ", global_Numeros_Participante);
                 }
             }
         }

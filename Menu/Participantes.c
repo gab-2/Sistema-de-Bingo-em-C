@@ -23,7 +23,7 @@ void Participante()
 
     int j = 0;
 
-    printf("\n Digite a quantidade de participantes que serao cadastrados: ");
+    printf("\n Digite a quantidade de participantes que serão cadastrados: ");
     scanf("%d", &global_Qtd_participantes);
 
     

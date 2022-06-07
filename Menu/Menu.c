@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 #include <string.h>
 #include <math.h>
 #include <time.h>
@@ -10,9 +9,14 @@
 #include "RegistrarCartela.c"
 #include "IniciarBingo.c"
 #include <ctype.h>
+#include <windows.h>
 
 void main()
 {
+
+    UINT CPAGE_UTF8 = 65001;
+    UINT CPAGE_DEFAULT = GetConsoleOutputCP();
+    SetConsoleOutputCP(CPAGE_UTF8);
 
     int opcao;
 
@@ -21,18 +25,18 @@ void main()
 
         printf("\n ---------------Menu-------------------------------------------------");
         printf("\n 1 - Cadastrar participante");
-        printf("\n 2 - Cadastrar Premios");
-        printf("\n 3 - Quantidade de numeros por participante e o intervalo do sorteio");
+        printf("\n 2 - Cadastrar Prêmios");
+        printf("\n 3 - Quantidade de números por participante e o intervalo do sorteio");
         printf("\n 4 - Registrar cartela");
         printf("\n 5 - Iniciar o Bingo!");
         printf("\n --------------------------------------------------------------------");
-        printf("\n Selecione a opcao desejada: ");
+        printf("\n Selecione a opção desejada: ");
         scanf("%d", &opcao);
 
         while (opcao < 1 || opcao > 5)
         {
-            printf("\n Opcao digitada invalida tente novamente!");
-            printf("\n Selecione a opcao desejada: ");
+            printf("\n Opção digitada inválida, tente novamente!");
+            printf("\n Selecione a opção desejada: ");
             scanf("%d", &opcao);
         }
 
