@@ -10,9 +10,14 @@
 #include "RegistrarCartela.c"
 #include "IniciarBingo.c"
 #include <ctype.h>
+#include <windows.h>
 
 void main()
 {
+
+    UINT CPAGE_UTF8 = 65001;
+    UINT CPAGE_DEFAULT = GetConsoleOutputCP();
+    SetConsoleOutputCP(CPAGE_UTF8);
 
     int opcao;
 
