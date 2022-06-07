@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 #include <string.h>
 #include <math.h>
 #include <time.h>
@@ -17,8 +16,21 @@ void IniciarBingo()
 
     char participante[global_Qtd_participantes];
 
-    sprintf(participante, "participante-%d.txt", global_Codigo_Participante);
-    cadastro_participante = fopen(participante, "a");
+    printf("\n Digite o numero do participante: ");
+    scanf("%d", &global_Codigo_Participante);
 
-    fseek(cadastro_participante, 3 * sizeof(struct DadosParticipante), SEEK_SET);
+    sprintf(participante, "participante-%d.txt", global_Codigo_Participante);
+    cadastro_participante = fopen(participante, "r");
+
+    if (cadastro_participante != NULL)
+    {
+        fscanf(cadastro_participante, " %d ", &global_Numeros_Participante);
+        printf(" %d ", global_Numeros_Participante);
+    }
+    else
+    {
+        printf("ERRO!, O arquivo nao pode ser aberto ou criado!");
+    }
+
+    system("cls");
 }
