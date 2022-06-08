@@ -8,7 +8,7 @@
 void IniciarBingo()
 {
 
-    printf("\n Numeros que foram sorteados dentro do intervalo! \n");
+    printf("\n Números que foram sorteados dentro do intervalo! \n");
 
     for (int i = 0; i < global_TamanhoDoIntervalo; i++)
     {
@@ -19,7 +19,7 @@ void IniciarBingo()
 
     char participante[global_Qtd_participantes];
 
-    printf("\n Digite o numero do participante: ");
+    printf("\n Digite o número do participante: ");
     scanf("%d", &global_Codigo_Participante);
 
     sprintf(participante, "participante-%d.txt", global_Codigo_Participante);

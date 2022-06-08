@@ -12,7 +12,7 @@ void IntervaloNumeros()
     int i = 0, igual;
     int j;
 
-    printf("\n Digite a quantidade de numeros que podem ser selecionados por cada participante!");
+    printf("\n Digite a quantidade de números que podem ser selecionados por cada participante!");
     printf("\n Quantidade: ");
     scanf("%d", &global_TamanhoDoIntervalo);
 
@@ -20,21 +20,21 @@ void IntervaloNumeros()
 
     //-------------------------------------------------------------------------------------//
 
-    printf("\n Digite o numero do inicio do intervalo dos numeros sorteados: ");
+    printf("\n Digite o número de inicio do intervalo dos números a serem sorteados: ");
     scanf("%d", &global_inicioIntervaloDosNumeros);
 
-    printf("\n Digite o numero do final do intervalo dos numeros sorteados: ");
+    printf("\n Digite o número do final do intervalo dos números a serem sorteados: ");
     scanf("%d", &global_FinalIntervaloDosNumeros);
 
     while (global_FinalIntervaloDosNumeros < global_inicioIntervaloDosNumeros)
     {
-        printf("\n O intervalo Final dos numeros nao pode ser menor do que o Inicio do intervalo!");
+        printf("\n O intervalo final dos números não pode ser menor do que o inicial do intervalo!");
         printf("\n Tente novamente!");
 
-        printf("\n Digite o numero do inicio do intervalo : ");
+        printf("\n Digite o número do inicio do intervalo : ");
         scanf("%d", &global_inicioIntervaloDosNumeros);
 
-        printf("\n Digite o numero do final do intervalo : ");
+        printf("\n Digite o número do final do intervalo : ");
         scanf("%d", &global_FinalIntervaloDosNumeros);
     }
 
@@ -42,7 +42,7 @@ void IntervaloNumeros()
 
     do
     {
-
+    
         global_resultadoDoIntervalo[i] = global_inicioIntervaloDosNumeros + rand() % global_FinalIntervaloDosNumeros; // sorteia um número
         igual = 0;
         for (j = 0; j < i; j++)
@@ -53,8 +53,9 @@ void IntervaloNumeros()
         }
 
         if (igual == 0) // significa que o elemento não se repetiu
-            i++;
+            i++;        
     } while (i < global_FinalIntervaloDosNumeros); // enquanto não for sorteado quantidade de números diferentes
 
     system("cls");
+    
 }

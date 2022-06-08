@@ -15,7 +15,7 @@ void RegistrarCartela()
     do
     {
 
-        printf("\n Digite o numero do participante para registrar a cartela: ");
+        printf("\n Digite o número do participante para registrar a cartela: ");
         scanf("%d", &global_Codigo_Participante);
 
         char participante[global_Qtd_participantes];
@@ -26,22 +26,22 @@ void RegistrarCartela()
         if (cadastro_participante != NULL)
         {
 
-            printf("\n Quantidade de numeros que podem ser selecionados: %d", global_TamanhoDoIntervalo);
+            printf("\n Quantidade de números que podem ser selecionados: %d", global_TamanhoDoIntervalo);
 
-            printf("\n Digite os numeros do participante: %d", global_Codigo_Participante);
+            printf("\n Digite os números do participante: %d", global_Codigo_Participante);
 
             for (int i = 0; i < global_TamanhoDoIntervalo; i++)
             {
 
-                printf("\n Digite o numero %d do participante: ", i + 1);
+                printf("\n Digite o número %d do participante: ", i + 1);
                 scanf("%d", &global_Numeros_Participante[i]);
                 fprintf(cadastro_participante, " %d ", global_Numeros_Participante[i]);
 
                 while (global_Numeros_Participante[i] < global_inicioIntervaloDosNumeros || global_Numeros_Participante[i] > global_FinalIntervaloDosNumeros)
                 {
-                    printf("\n O numero deve estar entre o intervalo de: %d a %d", global_inicioIntervaloDosNumeros, global_FinalIntervaloDosNumeros);
+                    printf("\n O número deve estar entre o intervalo de: %d a %d", global_inicioIntervaloDosNumeros, global_FinalIntervaloDosNumeros);
                     printf("\n Tente novamente!");
-                    printf("\n Digite o numero %d do participante: ", i);
+                    printf("\n Digite o número %d do participante: ", i);
                     scanf("%d", &global_Numeros_Participante[i]);
                     fprintf(cadastro_participante, " %d ", global_Numeros_Participante[i]);
                 }
@@ -49,13 +49,13 @@ void RegistrarCartela()
         }
         else
         {
-            printf("ERRO!, O arquivo nao pode ser aberto ou criado!");
+            printf("ERRO!, O arquivo não pode ser aberto ou criado!");
         }
 
         fclose(cadastro_participante);
 
         printf("\n Deseja cadastrar uma nova cartela de um participante?");
-        printf("\n Digite 1 para sim || 2 para nao: ");
+        printf("\n Digite 1 para sim || 2 para não: ");
         scanf("%d", &opcao);
     } while (opcao != 2);
 

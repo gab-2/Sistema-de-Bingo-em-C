@@ -29,7 +29,7 @@ void Participante()
     
     char participante[global_Qtd_participantes];
 
-    printf("\n Cadatrar novo Participante! \n");
+    printf("\n Cadastrar novo participante! \n");
 
     for (int i = 0; i < global_Qtd_participantes; i++)
     {
@@ -46,11 +46,11 @@ void Participante()
             scanf("%s", &Dados.nome);
             fprintf(cadastro_participante, "%s\n", Dados.nome);
 
-            printf("\n Digite o numero de telefone do Participante %d: ", j);
+            printf("\n Digite o número de telefone do Participante %d: ", j);
             scanf("%d", &Dados.numero);
             fprintf(cadastro_participante, "%d\n", Dados.numero);
 
-            printf("\n Digite o numero do Documento Pessoal do Perticipante ex:(CPF) %d: ", j);
+            printf("\n Digite o número do Documento Pessoal do Participante %d, ex:(CPF) : ", j);
             scanf("%d", &Dados.DocumetoPessoal);
             fprintf(cadastro_participante, "%d\n", Dados.DocumetoPessoal);
 
@@ -58,7 +58,7 @@ void Participante()
         }
         else
         {
-            printf("ERRO!, O arquivo nao pode ser aberto ou criado!");
+            printf("ERRO!, O arquivo não pode ser aberto ou criado!");
         }
 
         system("cls");

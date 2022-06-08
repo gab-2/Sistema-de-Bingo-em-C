@@ -17,9 +17,9 @@ void Premios()
 
     int opcao_qtd_premios;
 
-    printf("\n Voce deseja cadastrar mais premios do que participantes?");
-    printf("\n Se sim digite 1 || Se nao digite 2");
-    printf("\n Opcao: ");
+    printf("\n Você deseja cadastrar mais prêmios do que participantes?");
+    printf("\n Se sim digite 1 || Se não digite 2");
+    printf("\n Opção: ");
     scanf("%d", &opcao_qtd_premios);
 
     system("cls");
@@ -29,14 +29,14 @@ void Premios()
 
         while (opcao_qtd_premios != 1)
         {
-            printf("\n Opcao digitada incorreta! Tente novamente!");
-            printf("\n Digite a opcao desejada: ");
+            printf("\n Opção digitada incorreta! Tente novamente!");
+            printf("\n Digite a opção desejada: ");
             scanf("%d", &opcao_qtd_premios);
         }
 
         int Qtd_premios;
 
-        printf("\n Digite a quantidade de premios que serao cadastrados: ");
+        printf("\n Digite a quantidade de prêmios que serão cadastrados: ");
         scanf("%d", &Qtd_premios);
 
         system("cls");
@@ -45,7 +45,7 @@ void Premios()
         char premio[Qtd_premios];
         int j = 0;
 
-        printf("\n Cadatrar novo Prêmio! \n");
+        printf("\n Cadastrar novo prêmio! \n");
 
         for (int i = 0; i < Qtd_premios; i++)
         {
@@ -80,30 +80,30 @@ void Premios()
 
         while (opcao_qtd_premios != 2)
         {
-            printf("\n Opcao digitada incorreta! Tente novamente!");
-            printf("\n Digite a opcao desejada: ");
+            printf("\n Opção digitada incorreta! Tente novamente!");
+            printf("\n Digite a opção desejada: ");
             scanf("%d", &opcao_qtd_premios);
         }
 
         int Qtd_premios; // Qtd_participantes
 
-        printf("\n Digite a quantidade de premios que serao cadastrados: ");
+        printf("\n Digite a quantidade de prêmios que serão cadastrados: ");
         scanf("%d", &Qtd_premios);
 
         system("cls");
 
         while (Qtd_premios > global_Qtd_participantes)
         {
-            printf("\n A quantidade de premios nao pode ser maior do que a quantidade de jogadores!");
+            printf("\n A quantidade de prêmios não pode ser maior do que a quantidade de jogadores!");
             printf("\n Tente novamente!");
-            printf("\n Digite a quantidade de premios que serao cadastrados: ");
+            printf("\n Digite a quantidade de prêmios que serão cadastrados: ");
             scanf("%d", &Qtd_premios);
         }
 
         FILE *cadastro_premios;
         char premio[Qtd_premios];
 
-        printf("\n Cadatrar novo Prêmio! \n");
+        printf("\n Cadastrar novo prêmio! \n");
 
         for (int i = 0; i < Qtd_premios; i++)
         {
@@ -115,11 +115,11 @@ void Premios()
             if (cadastro_premios != NULL)
             {
 
-                printf("\n Informe o nome do premio para cadastro: ");
+                printf("\n Informe o nome do prêmio para cadastro: ");
                 scanf("%s", &Premios.nomeDoPremio);
                 fprintf(cadastro_premios, "%s\n", Premios.nomeDoPremio);
 
-                printf("\n Informe o valor do premio: ");
+                printf("\n Informe o valor do prêmio: ");
                 scanf("%d", &Premios.ValorDoPremio);
                 fprintf(cadastro_premios, "%d\n", Premios.ValorDoPremio);
 
