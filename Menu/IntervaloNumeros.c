@@ -5,7 +5,7 @@
 #include <math.h>
 #include <time.h>
 
-int global_resultadoDoIntervalo[100], global_TamanhoDoIntervalo, global_inicioIntervaloDosNumeros, global_FinalIntervaloDosNumeros;
+int global_resultadoDoIntervalo[999], global_TamanhoDoIntervalo, global_inicioIntervaloDosNumeros, global_FinalIntervaloDosNumeros;
 
 void IntervaloNumeros()
 {

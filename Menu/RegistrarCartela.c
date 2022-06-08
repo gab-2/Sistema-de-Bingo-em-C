@@ -5,7 +5,7 @@
 #include <math.h>
 #include <time.h>
 
-int global_Codigo_Participante, global_Numeros_Participante[100];
+int global_Codigo_Participante, global_Numeros_Participante;
 
 void RegistrarCartela()
 {
@@ -18,10 +18,10 @@ void RegistrarCartela()
         printf("\n Digite o número do participante para registrar a cartela: ");
         scanf("%d", &global_Codigo_Participante);
 
-        char participante[global_Qtd_participantes];
+        char participante[9999];
 
-        sprintf(participante, "participante-%d.txt", global_Codigo_Participante);
-        cadastro_participante = fopen(participante, "a");
+        sprintf(participante, "Cartela-Participante-%d.txt", global_Codigo_Participante);
+        cadastro_participante = fopen(participante, "w");
 
         if (cadastro_participante != NULL)
         {
@@ -34,16 +34,16 @@ void RegistrarCartela()
             {
 
                 printf("\n Digite o número %d do participante: ", i + 1);
-                scanf("%d", &global_Numeros_Participante[i]);
-                fprintf(cadastro_participante, " %d ", global_Numeros_Participante[i]);
+                scanf("%d", &global_Numeros_Participante);
+                fprintf(cadastro_participante, "\n%d", global_Numeros_Participante);
 
-                while (global_Numeros_Participante[i] < global_inicioIntervaloDosNumeros || global_Numeros_Participante[i] > global_FinalIntervaloDosNumeros)
+                while (global_Numeros_Participante < global_inicioIntervaloDosNumeros || global_Numeros_Participante > global_FinalIntervaloDosNumeros)
                 {
                     printf("\n O número deve estar entre o intervalo de: %d a %d", global_inicioIntervaloDosNumeros, global_FinalIntervaloDosNumeros);
                     printf("\n Tente novamente!");
-                    printf("\n Digite o número %d do participante: ", i);
-                    scanf("%d", &global_Numeros_Participante[i]);
-                    fprintf(cadastro_participante, " %d ", global_Numeros_Participante[i]);
+                    printf("\n Digite o número %d do participante: ", i + 1);
+                    scanf("%d", &global_Numeros_Participante);
+                    fprintf(cadastro_participante, "\n%d", global_Numeros_Participante);
                 }
             }
         }
