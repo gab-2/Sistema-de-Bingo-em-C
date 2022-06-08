@@ -3,6 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
+#define _GNU_SOURCE
 
 void IniciarBingo()
 {
@@ -14,6 +15,8 @@ void IniciarBingo()
         printf(" %d ", global_resultadoDoIntervalo[i]);
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
     char participante[global_Qtd_participantes];
 
     printf("\n Digite o numero do participante: ");
@@ -22,15 +25,26 @@ void IniciarBingo()
     sprintf(participante, "participante-%d.txt", global_Codigo_Participante);
     cadastro_participante = fopen(participante, "r");
 
-    if (cadastro_participante != NULL)
-    {
-        fscanf(cadastro_participante, " %d ", &global_Numeros_Participante);
-        printf(" %d ", global_Numeros_Participante);
-    }
-    else
-    {
-        printf("ERRO!, O arquivo nao pode ser aberto ou criado!");
-    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
-    system("cls");
+    size_t len = 100; // valor arbitrário
+    char *linha = malloc(len);
+
+    if (!cadastro_participante)
+    {
+        perror("teste.txt");
+        exit(1);
+    }
+    while (getline(&linha, &len, cadastro_participante) > 1)
+    {
+        printf("\n %d", linha);
+        //printf("\n %s", linha);
+    }
+    if (linha)
+        free(linha);
+    fclose(cadastro_participante);
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    // system("cls");
 }

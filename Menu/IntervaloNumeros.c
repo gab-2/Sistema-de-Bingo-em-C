@@ -11,7 +11,14 @@ void IntervaloNumeros()
 {
     int i = 0, igual;
     int j;
-    
+
+    printf("\n Digite a quantidade de numeros que podem ser selecionados por cada participante!");
+    printf("\n Quantidade: ");
+    scanf("%d", &global_TamanhoDoIntervalo);
+
+    system("cls");
+
+    //-------------------------------------------------------------------------------------//
 
     printf("\n Digite o numero do inicio do intervalo dos numeros sorteados: ");
     scanf("%d", &global_inicioIntervaloDosNumeros);
@@ -31,7 +38,6 @@ void IntervaloNumeros()
         scanf("%d", &global_FinalIntervaloDosNumeros);
     }
 
-    global_TamanhoDoIntervalo = global_FinalIntervaloDosNumeros;
     srand(time(NULL));
 
     do
@@ -48,7 +54,7 @@ void IntervaloNumeros()
 
         if (igual == 0) // significa que o elemento não se repetiu
             i++;
-    } while (i < global_TamanhoDoIntervalo); // enquanto não for sorteado quantidade de números diferentes
+    } while (i < global_FinalIntervaloDosNumeros); // enquanto não for sorteado quantidade de números diferentes
 
     system("cls");
 }

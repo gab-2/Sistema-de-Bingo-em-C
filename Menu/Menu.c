@@ -9,6 +9,7 @@
 #include "IntervaloNumeros.c"
 #include "RegistrarCartela.c"
 #include "IniciarBingo.c"
+#include "Historico.c"
 #include <ctype.h>
 #include <windows.h>
 
@@ -24,22 +25,20 @@ void main()
     do
     {
 
-     /*
-          ┌──────────────────────────────────────────────┐
-          │ ╔════════════════════════════════════════════╧═╗
-          │ ║                                              ║
-          │ ║    ██████╗ ██╗███╗   ██╗ ██████╗  ██████╗    ║
-          │ ║    ██╔══██╗██║████╗  ██║██╔════╝ ██╔═══██╗   ║
-          │ ║    ██████╔╝██║██╔██╗ ██║██║  ███╗██║   ██║   ║
-          │ ║    ██╔══██╗██║██║╚██╗██║██║   ██║██║   ██║   ║
-          │ ║    ██████╔╝██║██║ ╚████║╚██████╔╝╚██████╔╝   ║
-          │ ║    ╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚═════╝    ║
-          │ ║                                              ║
-          └─║     --- BOA SORTE NO BINGO ---               ║
-            ╚══════════════════════════════════════════════╝
-    */
-
-
+        /*
+             ┌──────────────────────────────────────────────┐
+             │ ╔════════════════════════════════════════════╧═╗
+             │ ║                                              ║
+             │ ║    ██████╗ ██╗███╗   ██╗ ██████╗  ██████╗    ║
+             │ ║    ██╔══██╗██║████╗  ██║██╔════╝ ██╔═══██╗   ║
+             │ ║    ██████╔╝██║██╔██╗ ██║██║  ███╗██║   ██║   ║
+             │ ║    ██╔══██╗██║██║╚██╗██║██║   ██║██║   ██║   ║
+             │ ║    ██████╔╝██║██║ ╚████║╚██████╔╝╚██████╔╝   ║
+             │ ║    ╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚═════╝    ║
+             │ ║                                              ║
+             └─║     --- BOA SORTE NO BINGO ---               ║
+               ╚══════════════════════════════════════════════╝
+       */
 
         printf("\n ---------------Menu-------------------------------------------------");
         printf("\n 1 - Cadastrar participante");
@@ -47,11 +46,12 @@ void main()
         printf("\n 3 - Quantidade de numeros por participante e o intervalo do sorteio");
         printf("\n 4 - Registrar cartela");
         printf("\n 5 - Iniciar o Bingo!");
+        printf("\n 6 - Acessar o Histórico!");
         printf("\n --------------------------------------------------------------------");
         printf("\n Selecione a opcao desejada: ");
         scanf("%d", &opcao);
 
-        while (opcao < 1 || opcao > 5)
+        while (opcao < 1 || opcao > 6)
         {
             printf("\n Opcao digitada invalida tente novamente!");
             printf("\n Selecione a opcao desejada: ");
@@ -80,6 +80,11 @@ void main()
         {
             system("cls");
             RegistrarCartela();
+        }
+        else if (opcao == 6)
+        {
+            system("cls");
+            Historico();
         }
 
     } while (opcao != 5);
