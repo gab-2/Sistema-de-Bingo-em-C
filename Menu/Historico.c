@@ -14,8 +14,7 @@ void Historico(){
         {             
             fscanf(historico, "%d ", global_resultadoDoIntervalo[i]); 
         }
-        int i;
-        for (i = 0; i < global_FinalIntervaloDosNumeros; i++)
+        for (int i = 0; i < global_FinalIntervaloDosNumeros; i++)
         {            
             
             fprintf(historico, "%d \t", global_resultadoDoIntervalo[i]); 
@@ -28,19 +27,18 @@ void Historico(){
         printf("%d ", global_resultadoDoIntervalo[i]);
     }
 
+    for (int i = 0; i < global_FinalIntervaloDosNumeros; i++) {
+        for (int j = i + 1; j < global_Qtd_participantes; i++) {
 
-
-/*
-    int i;
-    int j;
-    for (i = 0; i < global_FinalIntervaloDosNumeros; i++) {
-        for (int j = i+ 1; j < global_Qtd_participantes; i++) {
-
-            if (global_resultadoDoIntervalo[i])
+            if (global_resultadoDoIntervalo[i] == global_Numeros_Participante) {
+                printf("Participante %d, acertou o número: %d\n", i, global_resultadoDoIntervalo[i]);
+            }else 
+            {
+                
+            }
         }
     }
 
-*/
         
     fclose(historico);
 }
