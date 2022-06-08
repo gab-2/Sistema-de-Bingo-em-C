@@ -43,7 +43,7 @@ void IntervaloNumeros()
     do
     {
     
-        global_resultadoDoIntervalo[i] = global_inicioIntervaloDosNumeros + rand() % global_FinalIntervaloDosNumeros; // sorteia um número
+        global_resultadoDoIntervalo[i] = global_inicioIntervaloDosNumeros + rand() % global_FinalIntervaloDosNumeros + 1 - global_inicioIntervaloDosNumeros; // sorteia um número
         igual = 0;
         for (j = 0; j < i; j++)
         { // percorre a parte do vetor já preenchida

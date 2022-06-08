@@ -8,12 +8,12 @@
 void IniciarBingo()
 {
 
-    printf("\n Números que foram sorteados dentro do intervalo! \n");
+    //printf("\n Números que foram sorteados dentro do intervalo! \n");
 
-    for (int i = 0; i < global_TamanhoDoIntervalo; i++)
-    {
-        printf(" %d ", global_resultadoDoIntervalo[i]);
-    }
+    //for (int i = 0; i < global_TamanhoDoIntervalo; i++)
+    //{
+    //    printf(" %d ", global_resultadoDoIntervalo[i]);
+    //}
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -8,18 +8,41 @@
 void Historico(){
 
     FILE *historico;
-    historico = fopen("Historico.txt", "a");
-    
-    if (historico == NULL) 
-    {
-        printf("Erro na abertura do arquivo! ");
-    }else 
-    {
-        //printf("Números sorteados: \n");
-        for (int i = 0; i < global_TamanhoDoIntervalo; i++)
+    historico = fopen("Historico.txt", "w");
+
+        for (int i = 0; i < global_FinalIntervaloDosNumeros; i++)
+        {             
+            fscanf(historico, "%d ", global_resultadoDoIntervalo[i]); 
+        }
+        int i;
+        for (i = 0; i < global_FinalIntervaloDosNumeros; i++)
         {            
-            fprintf(historico, "%d", global_resultadoDoIntervalo[i]); 
-            //printf(" %d ", global_resultadoDoIntervalo[i]);
+            
+            fprintf(historico, "%d \t", global_resultadoDoIntervalo[i]); 
+
+        }
+
+    printf("Histórico: ");
+    for (int i = 0; i < global_FinalIntervaloDosNumeros; i++)
+    {
+        printf("%d ", global_resultadoDoIntervalo[i]);
+    }
+
+
+
+/*
+    int i;
+    int j;
+    for (i = 0; i < global_FinalIntervaloDosNumeros; i++) {
+        for (int j = i+ 1; j < global_Qtd_participantes; i++) {
+
+            if (global_resultadoDoIntervalo[i])
         }
     }
+
+*/
+        
+    fclose(historico);
 }
+
+
