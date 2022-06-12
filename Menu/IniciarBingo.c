@@ -25,7 +25,7 @@ void IniciarBingo()
     int i = 0;
     int cont;
 
-    int Abrir_Arquivo = 0;
+    int Abrir_Arquivo = 1;
 
     for (int i = 0; i < global_FinalIntervaloDosNumeros; i++)
     {
@@ -79,6 +79,19 @@ void IniciarBingo()
 
                         fscanf(cadastro_participante, "%d", &Dados.DocumetoPessoal);
                         printf("%s", &Dados.DocumetoPessoal);
+
+                        sprintf(participante, "premio-%d.txt", Abrir_Arquivo);
+                        cadastro_premios = fopen(participante, "r");
+
+                        ////////////////////////////////////////////////////////
+
+                        fscanf(cadastro_premios, "%s", &Premio.nomeDoPremio);
+                        printf("%s", &Premio.nomeDoPremio);
+
+                        ////////////////////////////////////////////////////////
+
+                        fscanf(cadastro_premios, "%d", &Premio.ValorDoPremio);
+                        printf("%d", &Premio.ValorDoPremio);
                     }
 
                     fclose(cadastro_participante);
@@ -140,7 +153,7 @@ void IniciarBingo()
                 }
             }
 
-            // system("cls");
+            //system("cls");
         }
     }
 }

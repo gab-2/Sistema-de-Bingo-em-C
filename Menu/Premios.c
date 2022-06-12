@@ -5,15 +5,18 @@
 #include <math.h>
 #include <time.h>
 
+FILE *cadastro_premios;
+
+struct CadastroDePremios
+{
+    char nomeDoPremio[30];
+    int ValorDoPremio;
+};
+
+struct CadastroDePremios Premio;
+
 void Premios()
 {
-    struct CadastroDePremios
-    {
-        char nomeDoPremio[30];
-        int ValorDoPremio;
-    };
-
-    struct CadastroDePremios Premios;
 
     int opcao_qtd_premios;
 
@@ -41,7 +44,6 @@ void Premios()
 
         system("cls");
 
-        FILE *cadastro_premios;
         char premio[Qtd_premios];
         int j = 0;
 
@@ -59,12 +61,12 @@ void Premios()
             {
 
                 printf("\n Informe o nome do prêmio para cadastro: ");
-                scanf("%s", &Premios.nomeDoPremio);
-                fprintf(cadastro_premios, "%s\n", Premios.nomeDoPremio);
+                scanf("%s", &Premio.nomeDoPremio);
+                fprintf(cadastro_premios, "%s\n", Premio.nomeDoPremio);
 
                 printf("\n Informe o valor do prêmio: ");
-                scanf("%d", &Premios.ValorDoPremio);
-                fprintf(cadastro_premios, "%d\n", Premios.ValorDoPremio);
+                scanf("%d", &Premio.ValorDoPremio);
+                fprintf(cadastro_premios, "%d\n", Premio.ValorDoPremio);
 
                 fclose(cadastro_premios);
             }
@@ -116,12 +118,12 @@ void Premios()
             {
 
                 printf("\n Informe o nome do prêmio para cadastro: ");
-                scanf("%s", &Premios.nomeDoPremio);
-                fprintf(cadastro_premios, "%s\n", Premios.nomeDoPremio);
+                scanf("%s", &Premio.nomeDoPremio);
+                fprintf(cadastro_premios, "%s\n", Premio.nomeDoPremio);
 
                 printf("\n Informe o valor do prêmio: ");
-                scanf("%d", &Premios.ValorDoPremio);
-                fprintf(cadastro_premios, "%d\n", Premios.ValorDoPremio);
+                scanf("%d", &Premio.ValorDoPremio);
+                fprintf(cadastro_premios, "%d\n", Premio.ValorDoPremio);
 
                 fclose(cadastro_premios);
             }
@@ -131,4 +133,6 @@ void Premios()
             }
         }
     }
+
+    system("cls");
 }

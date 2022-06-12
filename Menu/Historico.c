@@ -39,8 +39,6 @@ void Historico(){
         }
     }
 
-        
     fclose(historico);
+
 }
-
-

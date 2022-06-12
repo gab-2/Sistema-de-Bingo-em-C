@@ -11,6 +11,8 @@ int global_Qtd_participantes;
 struct DadosParticipante
     {
         char nome[30];
+        //char *nome; 
+        //nome = malloc (nome * sizeof(char));
         int numero;
         int DocumetoPessoal;
     };
