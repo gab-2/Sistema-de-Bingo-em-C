@@ -10,7 +10,7 @@ int global_Codigo_Participante, global_Numeros_Participante;
 void RegistrarCartela()
 {
 
-    int opcao;
+    int opcao = 0;
 
     do
     {
@@ -18,7 +18,7 @@ void RegistrarCartela()
         printf("\n Digite o número do participante para registrar a cartela: ");
         scanf("%d", &global_Codigo_Participante);
 
-        char participante[LC_MAX];
+        char participante[9999];
 
         sprintf(participante, "Cartela-Participante-%d.txt", global_Codigo_Participante);
         cadastro_participante = fopen(participante, "w");
@@ -57,6 +57,7 @@ void RegistrarCartela()
         printf("\n Deseja cadastrar uma nova cartela de um participante?");
         printf("\n Digite 1 para sim || 2 para não: ");
         scanf("%d", &opcao);
+
     } while (opcao != 2);
 
     system("cls");

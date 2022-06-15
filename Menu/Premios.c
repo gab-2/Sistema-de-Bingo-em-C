@@ -104,14 +104,15 @@ void Premios()
 
         FILE *cadastro_premios;
         char premio[Qtd_premios];
+        int j = 0;
 
         printf("\n Cadastrar novo prêmio! \n");
 
         for (int i = 0; i < Qtd_premios; i++)
         {
-
+            j++;
             // Função que cria uma nova string usando uma variavel, usada para o nome do arquivo que vai ser criado
-            sprintf(premio, "premio-%d.txt", i);
+            sprintf(premio, "premio-%d.txt", j);
             cadastro_premios = fopen(premio, "w");
 
             if (cadastro_premios != NULL)

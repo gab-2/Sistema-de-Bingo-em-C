@@ -6,8 +6,6 @@
 
 int global_Vetor_Numeros_Participante[999];
 
-// struct DadosParticipante Dados;
-
 void NumerosSorteados()
 {
 
@@ -32,12 +30,11 @@ void CarregarIformacoes()
     for (int i = 0; i < global_Qtd_participantes; i++)
     {
         j++;
-        sprintf(participante, "participante-%d.txt", j);
+        sprintf(participante, "Cartela-Participante-%d.txt", j);
         cadastro_participante = fopen(participante, "r");
-        printf("\nCartela %s", Dados.nome);
         for (i = 0; i < global_TamanhoDoIntervalo; i++)
         {
-            fscanf(cadastro_participante, "%d ", &global_Vetor_Numeros_Participante[i]);
+            fscanf(cadastro_participante, "\n%d", &global_Vetor_Numeros_Participante[i]);
         }
         fclose(cadastro_participante);
     }
@@ -46,10 +43,14 @@ void CarregarIformacoes()
 
 void IniciarBingo()
 {
+
+    char premio[global_Qtd_participantes];
+    int j;
+
     for (int i = 0; i < global_Qtd_participantes; i++)
     {
 
-        for (i = 0; i < quant; i++) // percorre as cartelas
+        for (i = 0; i < global_FinalIntervaloDosNumeros; i++) // percorre as cartelas
         {
             int contZero = 0;
             for (i = 0; i < global_TamanhoDoIntervalo; i++) // percorre os campos comparando os numeros batidos
@@ -60,40 +61,37 @@ void IniciarBingo()
                 }
             }
 
-            for (i = 0; i < valIn; i++) // percorre os campos contadando os zeros
+            for (i = 0; i < global_TamanhoDoIntervalo; i++) // percorre os campos contando os zeros
             {
-                for (j = 0; j < valFin; j++)
+                if (global_Vetor_Numeros_Participante[i] == 0)
                 {
-                    if (cartelas[y].M[i][j] == 0)
-                    {
-                        contZero++;
-                    }
+                    contZero++;
                 }
             }
-            if (contZero == (valIn * valFin)) // Verifica o vencedor
+            if (contZero == (global_TamanhoDoIntervalo)) // Verifica o vencedor
             {
-                file = fopen("Resultado.txt", "w");
-                mostrar();
-                printf("\n\n O vencedor foi : %s \n\n", cartelas[y].nome);
-                fprintf(file, "O vencedor foi : %s \n", cartelas[y].nome);
-                fclose(file);
-                file = fopen("Premiacao.txt", "r");
+                cadastro_participante = fopen("Historico.txt", "w");
+                // mostrar();
+                printf("\n\n O vencedor foi : %s \n\n", Dados.nome);
+                fprintf(cadastro_participante, "O vencedor foi : %s \n", Dados.nome);
+                fclose(cadastro_participante);
+                sprintf(premio, "premio-%d.txt", j);
+                cadastro_premios = fopen(premio, "r");
 
-                char premioArq[70];
+                char NomePremio[70];
 
-                fgets(premioArq, 70, file);
+                fscanf(cadastro_premios, "%s", NomePremio);
 
-                fclose(file);
+                fclose(cadastro_premios);
 
-                file = fopen("Resultado.txt", "a");
+                cadastro_participante = fopen("Historico.txt", "a");
 
-                fputs(premioArq, file);
+                fputs(NomePremio, cadastro_participante);
 
-                fclose(file);
+                fclose(cadastro_participante);
 
                 return;
             }
         }
-        mostrar();
     }
 }
