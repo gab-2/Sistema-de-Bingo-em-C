@@ -4,6 +4,11 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
+#include "Participantes.c"
+#include "Premios.c"
+#include "IntervaloNumeros.c"
+#include "IniciarBingo.c"
+#include "Historico.c"
 
 int global_Codigo_Participante, global_Numeros_Participante;
 
@@ -18,7 +23,7 @@ void RegistrarCartela()
         printf("\n Digite o número do participante para registrar a cartela: ");
         scanf("%d", &global_Codigo_Participante);
 
-        char participante[9999];
+        char participante[LC_MAX];
 
         sprintf(participante, "Cartela-Participante-%d.txt", global_Codigo_Participante);
         cadastro_participante = fopen(participante, "w");

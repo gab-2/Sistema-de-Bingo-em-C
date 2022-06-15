@@ -4,6 +4,11 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
+#include "Participantes.c"
+#include "Premios.c"
+#include "RegistrarCartela.c"
+#include "IniciarBingo.c"
+#include "Historico.c"
 
 int global_resultadoDoIntervalo[999], global_TamanhoDoIntervalo, global_inicioIntervaloDosNumeros, global_FinalIntervaloDosNumeros;
 

@@ -4,18 +4,21 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
+#include "Premios.c"
+#include "IntervaloNumeros.c"
+#include "RegistrarCartela.c"
+#include "IniciarBingo.c"
+#include "Historico.c"
 
 FILE *cadastro_participante;
 int global_Qtd_participantes;
 
 struct DadosParticipante
-    {
-        char nome[30];
-        //char *nome; 
-        //nome = malloc (nome * sizeof(char));
-        int numero;
-        int DocumetoPessoal;
-    };
+{
+    char nome[30];
+    int numero;
+    int DocumetoPessoal;
+};
 
 struct DadosParticipante Dados;
 
@@ -28,7 +31,6 @@ void Participante()
     printf("\n Digite a quantidade de participantes que serão cadastrados: ");
     scanf("%d", &global_Qtd_participantes);
 
-    
     char participante[global_Qtd_participantes];
 
     printf("\n Cadastrar novo participante! \n");
@@ -64,6 +66,5 @@ void Participante()
         }
 
         system("cls");
-
     }
 }

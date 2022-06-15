@@ -4,6 +4,11 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
+#include "Participantes.c"
+#include "Premios.c"
+#include "IntervaloNumeros.c"
+#include "RegistrarCartela.c"
+#include "IniciarBingo.c"
 
 void Historico(){
 
