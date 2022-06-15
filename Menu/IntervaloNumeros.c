@@ -17,7 +17,7 @@ void IntervaloNumeros()
     printf("\n Quantidade: ");
     scanf("%d", &global_TamanhoDoIntervalo);
 
-        valorMalloc = malloc(global_TamanhoDoIntervalo*sizeof(int));
+        valorMalloc = malloc(global_TamanhoDoIntervalo * sizeof(int));
 
     system("cls");
 

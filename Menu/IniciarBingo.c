@@ -66,8 +66,9 @@ void IniciarBingo()
                 if (global_Vetor_Numeros_Participante[i] == 0)
                 {
                     contZero++;
-                }
+                }  
             }
+            
             if (contZero == (global_TamanhoDoIntervalo)) // Verifica o vencedor
             {
                 cadastro_participante = fopen("Historico.txt", "w");
@@ -90,16 +91,23 @@ void IniciarBingo()
 
                 fclose(cadastro_participante);
 
-
-                printf("\n Numeros Sorteados: ");
-
-       for (int i = 0; i < global_FinalIntervaloDosNumeros; i++)
-    {
-        printf(" %d ", global_resultadoDoIntervalo[i]);
-    }
-
-
+                
+                printf("\n Números sorteados: ");
+                for (int i = 0; i < global_FinalIntervaloDosNumeros; i++)
+                {
+                printf(" %d ", global_resultadoDoIntervalo[i]);
+                }
                 return;
+
+                for (i = 0; i < global_Qtd_participantes; i++) 
+                {
+                    if (global_resultadoDoIntervalo[i] == global_Numeros_Participante) 
+                    {
+                        int auxiliar = auxiliar + 1;
+                        printf("O participante %d acertou esses números: %d", i, auxiliar);
+                    }
+                }
+
             }
         }
     }

@@ -36,7 +36,7 @@ void Participante()
         j++;
 
         // Função que cria uma nova string usando uma variavel, usada para o nome do arquivo que vai ser criado
-        sprintf(participante, "participante-%d.txt", j);
+        sprintf(participante, "Participante-%d.txt", j);
         cadastro_participante = fopen(participante, "w");
 
         if (cadastro_participante != NULL)
