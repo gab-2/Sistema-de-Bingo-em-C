@@ -6,6 +6,7 @@
 #include <time.h>
 
 int global_resultadoDoIntervalo[999], global_TamanhoDoIntervalo, global_inicioIntervaloDosNumeros, global_FinalIntervaloDosNumeros;
+int *valorMalloc;
 
 void IntervaloNumeros()
 {
@@ -15,6 +16,8 @@ void IntervaloNumeros()
     printf("\n Digite a quantidade de números que podem ser selecionados por cada participante!");
     printf("\n Quantidade: ");
     scanf("%d", &global_TamanhoDoIntervalo);
+
+        valorMalloc = malloc(global_TamanhoDoIntervalo*sizeof(int));
 
     system("cls");
 
