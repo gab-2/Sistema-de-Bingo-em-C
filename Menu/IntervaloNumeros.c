@@ -7,7 +7,6 @@
 
 int global_resultadoDoIntervalo[999], global_TamanhoDoIntervalo, global_inicioIntervaloDosNumeros, global_FinalIntervaloDosNumeros;
 int *valorMalloc;
-
 void IntervaloNumeros()
 {
     int i = 0, igual;
