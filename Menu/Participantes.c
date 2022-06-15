@@ -13,6 +13,7 @@ struct DadosParticipante
     char nome[30];
     int numero;
     int DocumetoPessoal;
+    int Numeros[9999];
 };
 
 struct DadosParticipante Dados;
