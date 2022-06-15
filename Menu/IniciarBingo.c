@@ -90,6 +90,15 @@ void IniciarBingo()
 
                 fclose(cadastro_participante);
 
+
+                printf("\n Numeros Sorteados: ");
+
+       for (int i = 0; i < global_FinalIntervaloDosNumeros; i++)
+    {
+        printf(" %d ", global_resultadoDoIntervalo[i]);
+    }
+
+
                 return;
             }
         }
