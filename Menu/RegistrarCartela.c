@@ -43,7 +43,7 @@ void RegistrarCartela()
                     printf("\n Tente novamente!");
                     printf("\n Digite o número %d do participante: ", i + 1);
                     scanf("%d", &global_Numeros_Participante);
-                    fprintf(cadastro_participante, "\n%d", global_Numeros_Participante);
+                    fprintf(cadastro_participante, "\t%d", global_Numeros_Participante);
                 }
             }
         }

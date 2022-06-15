@@ -17,6 +17,7 @@ void Historico(){
         for (int i = 0; i < global_FinalIntervaloDosNumeros; i++)
         {            
             
+            printf("Números sorteados: ");
             fprintf(historico, "%d \t", global_resultadoDoIntervalo[i]); 
 
         }
@@ -32,9 +33,6 @@ void Historico(){
 
             if (global_resultadoDoIntervalo[i] == global_Numeros_Participante) {
                 printf("Participante %d, acertou o número: %d\n", i, global_resultadoDoIntervalo[i]);
-            }else 
-            {
-                
             }
         }
     }
