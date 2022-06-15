@@ -4,11 +4,6 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
-#include "Premios.c"
-#include "IntervaloNumeros.c"
-#include "RegistrarCartela.c"
-#include "IniciarBingo.c"
-#include "Historico.c"
 
 FILE *cadastro_participante;
 int global_Qtd_participantes;

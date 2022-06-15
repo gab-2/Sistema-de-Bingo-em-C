@@ -4,11 +4,6 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
-#include "Participantes.c"
-#include "Premios.c"
-#include "IntervaloNumeros.c"
-#include "IniciarBingo.c"
-#include "Historico.c"
 
 int global_Codigo_Participante, global_Numeros_Participante;
 

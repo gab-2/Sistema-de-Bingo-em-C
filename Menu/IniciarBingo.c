@@ -3,11 +3,6 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
-#include "Participantes.c"
-#include "Premios.c"
-#include "IntervaloNumeros.c"
-#include "RegistrarCartela.c"
-#include "Historico.c"
 
 int global_Vetor_Numeros_Participante[999];
 
