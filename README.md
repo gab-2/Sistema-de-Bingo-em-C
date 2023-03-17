@@ -1,2 +1,2 @@
 # Bingo
-Projeto de desenvolvimento de um sistema de bingo.
+Projeto de desenvolvimento de um sistema de Bingo.

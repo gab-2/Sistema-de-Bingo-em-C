@@ -85,7 +85,6 @@ void main()
         {
             system("cls");
             Historico();
-            system("cls");
         }
 
     } while (opcao != 5);

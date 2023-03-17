@@ -103,6 +103,7 @@ void Premios()
         }
 
         FILE *cadastro_premios;
+        cadastro_premios = malloc(Qtd_premios * sizeof(int));
         char premio[Qtd_premios];
         int j = 0;
 
